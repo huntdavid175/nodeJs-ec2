@@ -2,9 +2,12 @@
 #include <math.h>
 
 int getNum(void);
+
 void showMenu(void);
 
 int powerCalculation(int, int);
+
+int numberRangeChecker(int valueToCheck, int minNum, int maxNum);
 
 int main(void)
 {
@@ -21,11 +24,32 @@ int main(void)
         {
         case 1:
             printf(" Enter new base between 1 and 30: ");
-            base = getNum();
+            int currentBase = getNum();
+            int isWithinBaseRange = numberRangeChecker(currentBase, 1, 30);
+
+            if (isWithinBaseRange)
+            {
+                base = currentBase;
+            }
+            else
+            {
+                printf("Entered base is out of range");
+            }
+
             break;
         case 2:
             printf("Enter new exponent between 1 and 6: ");
-            exponent = getNum();
+            int currentExponent = getNum();
+            int isWithinExponentRange = numberRangeChecker(currentExponent, 1, 6);
+
+            if (isWithinExponentRange)
+            {
+                exponent = currentExponent;
+            }
+            else
+            {
+                printf("Entered exponent is out of range");
+            }
             break;
         case 3:
             printf("\nBase raised to exponent is: %d\n", powerCalculation(base, exponent));
@@ -62,6 +86,20 @@ int powerCalculation(int baseNumber, int exponentNumber)
     return result;
 }
 
+int numberRangeChecker(int valueToCheck, int minNum, int maxNum)
+{
+    int isInRange;
+    if (valueToCheck < minNum || valueToCheck > maxNum)
+    {
+        isInRange = 0;
+    }
+    else
+    {
+        isInRange = 1;
+    }
+    return isInRange;
+}
+
 // FUnction to get user input
 #pragma warning(disable : 4996);
 int getNum(void)
@@ -82,4 +120,9 @@ int getNum(void)
         number = -1;
     }
     return number;
+}
+
+int range(int yes, int flow, int cash)
+{
+    return 1;
 }
