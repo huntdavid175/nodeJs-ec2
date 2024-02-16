@@ -1,11 +1,10 @@
 #include <stdio.h>
-#include <math.h>
 
 int getNum(void);
 
 void showMenu(void);
 
-int powerCalculation(int, int);
+int powerCalculation(int baseNumber, int exponentNumber);
 
 int numberRangeChecker(int valueToCheck, int minNum, int maxNum);
 
@@ -13,9 +12,9 @@ int main(void)
 {
     int base = 1;
     int exponent = 1;
-    int option = 0;
+    int option;
 
-    while (option != 4)
+    do
     {
         showMenu();
         option = getNum();
@@ -52,15 +51,16 @@ int main(void)
             }
             break;
         case 3:
-            printf("\nBase raised to exponent is: %d\n", powerCalculation(base, exponent));
+            printf("\n%d raised to the power %d is %d\n", base, exponent, powerCalculation(base, exponent));
             break;
         case 4:
-            printf("Exiting program...\n");
+            // printf("Exiting program...\n");
             break;
         default:
-            printf("\nInvalid option. Please try again.\n");
+            printf("\nInvalid entry\n");
         }
-    }
+    } while (option != 4);
+
     return 0;
 }
 
@@ -73,7 +73,7 @@ void showMenu()
     printf("  2. Change exponent \n");
     printf("  3. Display base raised to exponent \n");
     printf("  4. Exit program \n");
-    printf("Option? \n");
+    printf(" Option? \n");
 }
 
 int powerCalculation(int baseNumber, int exponentNumber)
@@ -86,21 +86,7 @@ int powerCalculation(int baseNumber, int exponentNumber)
     return result;
 }
 
-int numberRangeChecker(int valueToCheck, int minNum, int maxNum)
-{
-    int isInRange;
-    if (valueToCheck < minNum || valueToCheck > maxNum)
-    {
-        isInRange = 0;
-    }
-    else
-    {
-        isInRange = 1;
-    }
-    return isInRange;
-}
-
-// FUnction to get user input
+// Function to get user input
 #pragma warning(disable : 4996);
 int getNum(void)
 {
