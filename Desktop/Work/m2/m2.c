@@ -86,6 +86,20 @@ int powerCalculation(int baseNumber, int exponentNumber)
     return result;
 }
 
+int numberRangeChecker(int valueToCheck, int minNum, int maxNum)
+{
+    int isInRange;
+    if (valueToCheck < minNum || valueToCheck > maxNum)
+    {
+        isInRange = 0;
+    }
+    else
+    {
+        isInRange = 1;
+    }
+    return isInRange;
+}
+
 // Function to get user input
 #pragma warning(disable : 4996);
 int getNum(void)
