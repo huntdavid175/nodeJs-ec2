@@ -1,8 +1,8 @@
 /*
- * FILE : f4.cc
- * PROJECT : SENG1000 - Focus #4
+ * FILE : m2.cpp
+ * PROJECT : SENG1000 - Major #2
  * PROGRAMMER :
- * FIRST VERSION : 2024-02-14
+ * FIRST VERSION : 2024-02-15
  * DESCRIPTION :
  * This program calculates powers …
  */
