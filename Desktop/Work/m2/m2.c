@@ -1,7 +1,7 @@
 /*
  * FILE : m2.cpp
  * PROJECT : SENG1000 - Major #2
- * PROGRAMMER :
+ * PROGRAMMER : Fawaz Dogbe (8982570)
  * FIRST VERSION : 2024-02-15
  * DESCRIPTION :
  * This program calculates powers …
